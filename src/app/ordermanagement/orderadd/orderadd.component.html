@@ -1,0 +1,117 @@
+<div class="container-fluid  ">
+    <div class="row m-0 justify-content-md-center " style="padding-top:50px;">
+        <div *ngIf="cancelll" class="col-md-8">
+            <form [formGroup]="orderadd" (ngSubmit)="addorder()"> 
+                <div class="form-inline justify-content-md-center jumbotron p-3 form-horizontal">
+                    <!--1.allboards and signage-->
+                    <select formControlName="category_name"   (change)="ngOnChanges()" class="form-control">
+                        <option value="" disabled="true" >--please select--</option>
+                        <option>allboards and signage</option>
+                        <option>printing and stationeries</option>
+                        <option>promotional items</option>
+                        <option>safety products</option>
+                        <option>IOT</option>
+                    </select> 
+                    <!--2.allboards and signage-->
+                    <select formControlName="product_name" class="form-control w-md-100 m-2" (change)="loadform()">
+                        <option value="" disabled="true" >--please select--</option>
+                        <option *ngFor="let products of product">{{products.product_name}}</option>
+                    </select>
+                </div>
+            <!--allboards and signage-->
+                <div *ngIf="allboards_and_signage" class="jumbotron bg-white">
+
+                    <label for="exampleForm2">Order code:</label>
+                    <input formControlName="order_code" name='order_code' type="text" id="exampleForm2" class="form-control form-control bg-red" required/>
+                    <!-- 3show this error ifh thae field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('order_code').touched && orderadd.get('order_code').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                        <span style="font-size:12px;">* Order code is required.</span>
+                    </div>
+      
+                    <label for="exampleForm2">Customer code:</label>
+                    <input formControlName="customer_code" name='customer_code' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 4show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('customer_code').touched && orderadd.get('customer_code').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Customer code is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Thickness:</label>
+                    <input formControlName="thickness" name='thickness' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 5show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('thickness').touched && orderadd.get('thickness').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* thickness is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Width:</label>
+                    <input formControlName="width" name='width' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 6show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('width').touched && orderadd.get('width').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* width is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">height:</label>
+                    <input formControlName="height" name='height' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 7show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('height').touched && orderadd.get('height').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* height is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Print and Cutting:</label>
+                    <input formControlName="print_and_cutting" name='print_and_cutting' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 8show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('print_and_cutting').touched && orderadd.get('print_and_cutting').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Print and cutting is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Fixing area:</label>
+                    <input formControlName="fixing_area" name='fixing_area' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 9show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('fixing_area').touched && orderadd.get('fixing_area').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Fixing area is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Fixing type:</label>
+                    <input formControlName="fixing_type" name='fixing_type' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 10show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('fixing_type').touched && orderadd.get('fixing_type').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Fixing type is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Board side:</label>
+                    <input formControlName="board_side" name='board_side' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 11show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('board_side').touched && orderadd.get('board_side').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Board side is required.</span>
+                    </div>
+
+                    <label class="" for="exampleForm2">Chain detail:</label>
+                    <input formControlName="chain_detail" name='chain_detail' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <!-- 12show this error if the field is 'touched' and 'empty' -->
+                    <div *ngIf="orderadd.get('chain_detail').touched && orderadd.get('chain_detail').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Chain detail is required.</span>
+                    </div>
+                    <!-- 13show this error if the field is 'touched' and 'empty' -->
+                    <label class="" for="exampleForm2">Chain type:</label>
+                    <input formControlName="chain_type" name='chain_type' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <div *ngIf="orderadd.get('chain_type').touched && orderadd.get('chain_type').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* Chain type is required.</span>
+                    </div>
+                    <!-- 14show this error if the field is 'touched' and 'empty' -->
+                    <label class="" for="exampleForm2">order_status:</label>
+                    <input formControlName="order_status" name='order_status' type="text" id="exampleForm2" class=" form-control form-control bg-red" required/>
+                    <div *ngIf="orderadd.get('order_status').touched && orderadd.get('order_status').hasError('required')" class="alert text-danger text-right p-0 m-0">
+                    <span style="font-size:12px;">* chain_detail is required.</span>
+                    </div>
+
+                    <div>
+                        <input class="btn btn-primary" type="submit" [disabled]="!orderadd.valid" value="Add new"/><a class="btn btn-primary" (click)="cancel()">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="cancell">
+            <p>Are You Sure want to cancel</p>
+            <a [routerLink]="['/orderlist']" class="btn btn-danger">Yes</a><a (click)="no()" class="btn btn-danger">No</a>
+        </div>
+    </div> 
+bv n</div>            

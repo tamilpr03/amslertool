@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/*its the part of input box focus color change*/
+    .form-control:focus {
+        border-color: #ff80ff;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(255, 100, 255, 0.5);
+    }

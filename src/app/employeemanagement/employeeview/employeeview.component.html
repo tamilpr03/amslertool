@@ -1,0 +1,23 @@
+
+<div *ngIf="vieww" class=" jumbotron container row bg-white m-1 p-3">
+  <a [routerLink]="['/employeeedit']">Edit</a><a (click)="delete()">Delete</a>
+    <div class="col-12 text-center"><h2>{{employee?.emp_name}}</h2></div>
+  <div class="col-md-6">
+      <label for="exampleForm2">Empname</label>
+      <input type="text" id="exampleForm2" class="form-control bg-red" value="{{employee?.emp_name}}" disabled>
+      <label for="exampleForm2">Empcode</label>
+      <input type="text" id="exampleForm2" class="form-control bg-red" value="{{employee?.emp_code}}" disabled>
+  </div>
+  <div class="col-md-6">
+      <label for="exampleForm2">Emp Email</label>
+      <input type="text" id="exampleForm2" class="form-control bg-red" value="{{employee?.emp_name}}" disabled>
+      <label for="exampleForm2">Empphone</label>
+      <input type="text" id="exampleForm2" class="form-control bg-red" value="{{employee?.emp_name}}" disabled>
+  </div>
+  
+  <!-- Material input -->
+</div>
+<div *ngIf="deletee">
+    <p>Are You Sure want to delete</p>
+    <a (click)="deleted()" class="btn btn-danger">Yes</a><a (click)="view()" class="btn btn-danger">No</a>
+  </div>

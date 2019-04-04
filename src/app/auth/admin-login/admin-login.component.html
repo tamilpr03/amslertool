@@ -1,0 +1,38 @@
+<div class="container-fluid" >
+        <div class="row justify-content-md-center " style="padding-top:50px;">
+                <!-- Material form login -->
+        <div class=" card col-sm-4">   
+        <h5 class="card-header info-color white-text text-center py-4">
+          <strong>Sign in</strong>
+        </h5>
+      
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+
+<form class="text-center" style="color: #757575;" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!--usename-->
+    <div class="md-form">
+        <label for="emp_name">Username</label>
+        <input type="text" formControlName="emp_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emp_name.errors }" />
+        <div *ngIf="submitted && f.emp_name.errors" class="invalid-feedback">
+            <div *ngIf="f.emp_name.errors.required">Username is required</div>
+        </div>
+    </div>
+    <!--usename-->
+    <div class="md-form">
+        <label for="emp_password">Password</label>
+        <input type="password" formControlName="emp_password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emp_password.errors }" />
+        <div *ngIf="submitted && f.emp_password.errors" class="invalid-feedback">
+            <div *ngIf="f.emp_password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <!--submit-->
+    <div class="md-form">
+        <button type="submit" [disabled]="loading" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0">Login</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container-fluid" >
+    <div class="row justify-content-md-center " style="padding-top:50px;">
+            <!-- Material form login -->
+    <div class=" card col-sm-4">   
+    <h5 class="card-header info-color white-text text-center py-4">
+      <strong>Sign in</strong>
+    </h5>
+  
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+<form [formGroup]="loginForm" (ngSubmit)="sendotp()">
+    <div class="md-form">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button  class="btn btn-primary">{{sendotpbtn}}</button>  
+    </div>
+    <!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
+</form>
+<div *ngIf="showlogin">
+    <form [formGroup]="loginFormm" (ngSubmit)="login()">
+        <div class="md-form">
+            <label for="otp">Enter OTP</label>
+            <input type="text" formControlName="otp" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.otp.errors }" />
+            <div *ngIf="submitted && g.otp.errors" class="invalid-feedback">
+                <div *ngIf="g.otp.errors.required">otp is required (Notes: You are autherized user. Please contact admin to get the OTP)</div>
+            </div>
+        </div>
+        <div class="md-form">
+            <button  class="btn btn-primary">Login</button>  
+        </div>
+       <!-- <div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>

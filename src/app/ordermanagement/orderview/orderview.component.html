@@ -1,0 +1,84 @@
+<div class="container">
+      
+      <div class="row">
+          <div class=" col-md-12  p-4 m-0  z-index-0 ">
+            <div class=" m-0 p-2 corner-0">
+             
+                <nav class="mb-1 navbar  navbar-expand-lg cyan text-white lighten-4 border-left-1">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home >
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Order Details
+                            </a>
+                          </li>        
+                      </ul>
+                  <ul class="navbar-nav ml-auto nav-flex-icons"> 
+                        <li class="nav-item mr-2">
+                            <a class="nav-link rounded-circle waves-effect waves-light">
+                                <i class="far fa-trash-alt"></i>
+                             
+                            </a>
+                          </li>  
+                      <li class="nav-item mr-2">
+                          <a class="nav-link rounded-circle waves-effect waves-light">
+                            <i class="fas fa-edit"></i>
+                          </a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link rounded-circle waves-effect waves-light">
+                              <i class="fas fa-print"></i>
+                            </a>
+                          </li>
+                      </ul>
+                </nav>    
+                  <!--/.Navbar -->             
+            </div>
+            
+          
+          </div>
+          <div class="jumbotron col-md-7 m-4 mt-1 p-3"> 
+              <div class="row">
+            <div class="col-6"> 
+              <label>Order code:</label><label class="align-right">{{orders?.order_code}}</label><br>
+              <label>Customer code:</label><label>{{orders?.customer_code}}</label>
+            </div>
+            <div class="col-6 text-right">
+              <label>Order placed date:</label><label>{{orders?.customer_code}}</label><br>
+              <label>order expected date:</label><label>{{orders?.customer_code}}</label>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table ">
+              <tr>  <td>Order code</td><td>{{orders?.order_code}}</td><td>customer code</td><td>{{orders?.customer_code}}</td></tr>
+              <tr><td>Category name</td><td>{{orders?.category_name}}</td><td>product name</td><td>{{orders?.product_name}}</td></tr>
+              <tr><td>Thickness</td><td>{{orders?.thickness}}</td><td>Width</td><td>{{orders?.width}}</td></tr>
+              <tr><td>Height</td><td>{{orders?.height}}</td><td>Print and Cutting</td><td>{{orders?.print_and_cutting}}</td></tr>
+              <tr><td>Fixing area</td><td>{{orders?.fixing_area}}</td><td>Fixing type</td><td>{{orders?.fixing_type}}</td></tr>
+              <tr><td>Board side</td><td>{{orders?.board_side}}</td><td>Chain details</td><td>{{orders?.chain_detail}}</td></tr>
+              <tr><td>Chain type</td><td>{{orders?.chain_type}}</td></tr>
+            </table>
+          </div>
+          </div>
+          <div class="jumbotron col-md-4 m-3 mt-1 p-3">
+            <div class="table-responsive">
+              <table class="table ">
+                  <tr>  <td>Order code</td><td>{{orders?.order_code}}</td></tr>
+                  <tr><td>Category name</td><td>{{orders?.category_name}}</td></tr>
+                  <tr><td>Thickness</td><td>{{orders?.thickness}}</td></tr>
+                  <tr><td>Height</td><td>{{orders?.height}}</td></tr>
+                  <tr><td>Fixing area</td><td>{{orders?.fixing_area}}</td></tr>
+                  <tr><td>Board side</td><td>{{orders?.board_side}}</td></tr>
+                  <tr><td>Chain type</td><td>{{orders?.chain_type}}</td></tr>
+                </table>
+            </div>
+          </div>
+          <!-- Material inpnut -->
+          <div *ngIf="deletee">
+            <p>Are You Sure want to delete</p>
+            <a (click)="deleted()" class="btn btn-danger">Yes</a><a (click)="view()" class="btn btn-danger">No</a>
+          </div>
+      </div>    
+</div>

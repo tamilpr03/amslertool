@@ -23,9 +23,25 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/mdbootstrap/css/bootstrap.min.css",
+              "node_modules/mdbootstrap/css/mdb.min.css",
+              "node_modules/mdbootstrap/css/addons/datatables.min.css",
+              "src/assets/fontawesome/css/all.css",            
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/hammerjs/hammer.min.js",
+              "node_modules/mdbootstrap/js/bootstrap.min.js",
+              "node_modules/mdbootstrap/js/mdb.min.js",
+              "node_modules/mdbootstrap/js/popper.min.js",
+              "node_modules/mdbootstrap/js/addons/datatables.min.js",
+              "node_modules/mdbootstrap/js/bootstrap.min.js",
+              "src/assets/js/custom.js",
+              "src/assets/fontawesome/js/all.js"
+              
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

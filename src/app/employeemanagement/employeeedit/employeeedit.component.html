@@ -1,0 +1,29 @@
+<div class="container bg-white m-1 p-3 ">
+  
+<form [formGroup]="update_product_form" (ngSubmit)="updateProduct()">
+    <div class="row  col-12">  
+  <div class="col-6">
+              <label for="exampleForm2">Emp_name</label>
+                <input formControlName="emp_name" name='emp_name' type="text" id="exampleForm2" class="form-control bg-red" required/>
+                <!-- show this error if the field is 'touched' and 'empty' -->
+                <div *ngIf="update_product_form.get('emp_name').touched && update_product_form.get('emp_name').hasError('required')"
+                    class="alert alert-danger">
+                    emp_name is required.
+                </div>
+    </div>
+    <div class="col-6">
+              <label for="exampleForm2">emp_code</label>
+                <input formControlName="emp_code" name='emp_code' type="text" id="exampleForm2" class="form-control bg-red" required/>
+                <!-- show this error if thae field is 'touched' and 'empty' -->
+                <div *ngIf="update_product_form.get('emp_code').touched && update_product_form.get('emp_code').hasError('required')"
+                    class="alert alert-danger">
+                    emp_name is required.
+                </div>
+    </div>
+  </div>
+        <div>
+          <input class="btn btn-primary" type="submit" value="Update" [disabled]="!update_product_form.valid"/><a class="btn btn-primary" (click)="delete()">Cancel</a>
+        </div>
+        </form>
+      
+      </div>

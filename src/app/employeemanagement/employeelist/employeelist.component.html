@@ -1,0 +1,41 @@
+<div class=" container bg-white p-3">
+  <a [routerLink]="(['/employeeadd'])">Add employee</a>
+<table id="dtBasicExample" datatable="ng" class="table table-bordered table-sm table-responsive-md" cellspacing="0" width="100%">
+    <thead class="grey lighten-2">
+      <tr>
+        <th class="th-sm ">Emp Code</th>
+        <th class="th-sm">Emp name</th>
+        <th class="th-sm">Emp Phone</th>
+        <th class="th-sm">Emp email</th>
+        <th class="">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.emp_code}}</td>
+        <td>{{employee.emp_name}}</td>
+        <td>{{employee.emp_phone}}</td>
+        <td>{{employee.emp_email}}</td>
+        <td class="align-middle pl-4">
+            <!-- read one product button -->
+           <!-- <a [routerLink]="['/employeeview/',employee.emp_code]" class='btn btn-primary  p-1 '>
+                <span class='glyphicon glyphicon-eye-open'></span> View
+            </a>-->
+            <a (click)="employeeview(employee)" class='btn btn-primary '>
+              <span class='glyphicon glyphicon-eye-open'></span> View
+          </a>
+        </td>
+      </tr>
+     
+    </tbody>
+    <tfoot>
+      <tr>
+          <th class="th-sm">Emp Code</th>
+            <th class="th-sm">Emp name</th>
+            <th class="th-sm">Emp Phone</th>
+              <th class="th-sm">Emp email</th>
+                <th class="th-sm">Actions</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
