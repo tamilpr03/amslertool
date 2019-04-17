@@ -1,84 +1,123 @@
 <div class="container">
-      
-      <div class="row">
-          <div class=" col-md-12  p-4 m-0  z-index-0 ">
-            <div class=" m-0 p-2 corner-0">
-             
-                <nav class="mb-1 navbar  navbar-expand-lg cyan text-white lighten-4 border-left-1">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Home >
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Order Details
-                            </a>
-                          </li>        
-                      </ul>
-                  <ul class="navbar-nav ml-auto nav-flex-icons"> 
-                        <li class="nav-item mr-2">
-                            <a class="nav-link rounded-circle waves-effect waves-light">
-                                <i class="far fa-trash-alt"></i>
-                             
-                            </a>
-                          </li>  
-                      <li class="nav-item mr-2">
-                          <a class="nav-link rounded-circle waves-effect waves-light">
-                            <i class="fas fa-edit"></i>
-                          </a>
-                        </li>
-                        <li class="nav-item mr-2">
-                            <a class="nav-link rounded-circle waves-effect waves-light">
-                              <i class="fas fa-print"></i>
-                            </a>
-                          </li>
-                      </ul>
-                </nav>    
-                  <!--/.Navbar -->             
-            </div>
+  <div class="justify-content-center">
+ <!--view header print,edit,delete-->
+ <div class=" col-lg-12 m-lg-3">
+    <nav class="mb-1 navbar  navbar-expand-lg text-white  border-left-1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link text-primary" [routerLink]="[('/dashboard/orderlist')]"><small>Home->OrderDetails </small></a></li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons"> 
+          <li class="nav-item mr-2"><a class="btn-link btn-sm waves-effect   " data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-trash-alt red-text"></i></a></li>
+        <li class="nav-item mr-2"><a class="btn-link btn-sm waves-effect    " [routerLink]="[('/dashboard/orderedit')]"><i class="fas fa-edit orange-text"></i></a></li>
+        <li class="nav-item mr-2"><a class="btn-link btn-sm waves-effect   " (click)="printDiv('printablediv')"><i class="fas fa-print green-text"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+  <!--stepper details-->
+  <div class="col-12 m-0 p-0">
+    <!-- Horizontal Steppers -->
+
+    <!-- Stepers Wrapper -->
+    <ul class=" m-lg-0 p-lg-0 stepper stepper-horizontal stepper-lg">
+
+      <!-- First Step -->
+      <li class="active">
+        <a href="#!">
+          <span class="circle ">1</span>
+          <span class="label">Stage 1</span><br>
+          <span class="badge badge-secondary pl-3 pr-3"><small>employee 1</small></span>
+        </a>
+      </li>
+
+      <!-- Second Step -->
+      <li class="active">
+        <a href="#!">
+          <span class="circle">2</span>
+          <span class="label">Stage 2</span><br>
+          <span class="badge badge-secondary pl-3 pr-3"><small>employee 2</small></span>
+        </a>
+      </li>
+
+      <!-- Third Step -->
+      <li class="">
+        <a href="#!">
+          <span class="circle">3</span>
+          <span class="label">Stage 3</span><br>
+          <span class="badge badge-secondary pl-3 pr-3"><small></small></span>
+        </a>
+      </li>
+      <li class="">
+          <a href="#!">
+            <span class="circle"><i class="fas fa-exclamation"></i></span>
+            <span class="label">Processing</span><br>
+            <span class="badge badge-danger pl-3 pr-3"><small></small></span>
+          </a>
+        </li>
+
+    </ul>
+    <!-- /.Stepers Wrapper -->
+<!-- /.Horizontal Steppers -->
+  </div>
+  </div>
+  <div id="printablediv" class="row justify-content-center p-0 m-0"> 
+   
+    <!--view order details-->
+    <div class="jumbotron col-lg-7 p-0 m-md-3 w-100"> 
+      <div class="grey lighten-3 text-center p-2 mb-0">ORDER DETAILES</div>
+      <table class="table table-responsive-md ">
+        <tr class="grey lighten-5"><td>Order code :</td><td><strong>{{orders?.order_code}}</strong></td><td>Order date :</td><td><strong>{{orders?.order_placed_at}}</strong></td></tr>
+        <tr class="grey lighten-5"><td class="border-0">Customer code :</td><td class="border-0"><strong>{{orders?.customer_code}}</strong></td><td class="border-0">expected delivery :</td><td class="border-0"><strong>{{orders?.cus_expected_delivery}}</strong></td></tr>
+        <tr><td>Category name</td><td><strong>{{orders?.category_name}}</strong></td><td>product name</td><td><strong>{{orders?.product_name}}</strong></td></tr>
+        <tr><td>Thickness</td><td><strong>{{orders?.thickness}}</strong></td><td>Width</td><td><strong>{{orders?.width}} {{orders?.size}}</strong></td></tr>
+        <tr><td>Height</td><td><strong>{{orders?.height}} {{orders?.size}}</strong></td><td>Print and Cutting</td><td><strong>{{orders?.print_and_cutting}}</strong></td></tr>
+        <tr><td>Fixing area</td><td><strong>{{orders?.fixing_area}}</strong></td><td>Fixing type</td><td><strong>{{orders?.fixing_type}}</strong></td></tr>
+        <tr><td>Board side</td><td><strong>{{orders?.board_side}}</strong></td><td>Chain details</td><td><strong>{{orders?.chain_detail}}</strong></td></tr>
+        <tr><td>Chain type</td><td><strong>{{orders?.chain_type}}</strong></td></tr>
+      </table>
+    </div>
+    <!--view customer details-->
+    <div class="jumbotron col-lg-4 p-0 m-md-3">
+      <div class="grey lighten-3 text-center p-2 mb-0">CUSTOMER DETAILES</div>
+        <table class="table table-responsive-md ">
+            <tr class="grey lighten-5"><td >Customer code :</td><td><strong>{{customers?.customer_code}}</strong></td></tr>
+            <tr class="grey lighten-5"><td class="border-0">Customer name :</td><td class="border-0"><strong>{{customers?.cus_name}}</strong></td></tr>
+            <tr><td>Phone :</td><td><strong>{{customers?.cus_phone}}</strong></td></tr>
+            <tr><td>Alternate phone :</td><td><strong>{{customers?.cus_altphone}}</strong></td></tr>
+            <tr><td>Email ID :</td><td><strong>{{customers?.cus_email}}</strong></td></tr>
+            <tr><td>Address :</td><td><strong>{{customers?.cus_addline1}}, {{customers?.cus_addline2}},<br> {{customers?.cus_area}}, {{customers?.cus_district}}, <br>{{customers?.cus_state}}, {{customers?.cus_pincode}},</strong></td></tr>
             
-          
-          </div>
-          <div class="jumbotron col-md-7 m-4 mt-1 p-3"> 
-              <div class="row">
-            <div class="col-6"> 
-              <label>Order code:</label><label class="align-right">{{orders?.order_code}}</label><br>
-              <label>Customer code:</label><label>{{orders?.customer_code}}</label>
-            </div>
-            <div class="col-6 text-right">
-              <label>Order placed date:</label><label>{{orders?.customer_code}}</label><br>
-              <label>order expected date:</label><label>{{orders?.customer_code}}</label>
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table ">
-              <tr>  <td>Order code</td><td>{{orders?.order_code}}</td><td>customer code</td><td>{{orders?.customer_code}}</td></tr>
-              <tr><td>Category name</td><td>{{orders?.category_name}}</td><td>product name</td><td>{{orders?.product_name}}</td></tr>
-              <tr><td>Thickness</td><td>{{orders?.thickness}}</td><td>Width</td><td>{{orders?.width}}</td></tr>
-              <tr><td>Height</td><td>{{orders?.height}}</td><td>Print and Cutting</td><td>{{orders?.print_and_cutting}}</td></tr>
-              <tr><td>Fixing area</td><td>{{orders?.fixing_area}}</td><td>Fixing type</td><td>{{orders?.fixing_type}}</td></tr>
-              <tr><td>Board side</td><td>{{orders?.board_side}}</td><td>Chain details</td><td>{{orders?.chain_detail}}</td></tr>
-              <tr><td>Chain type</td><td>{{orders?.chain_type}}</td></tr>
-            </table>
-          </div>
-          </div>
-          <div class="jumbotron col-md-4 m-3 mt-1 p-3">
-            <div class="table-responsive">
-              <table class="table ">
-                  <tr>  <td>Order code</td><td>{{orders?.order_code}}</td></tr>
-                  <tr><td>Category name</td><td>{{orders?.category_name}}</td></tr>
-                  <tr><td>Thickness</td><td>{{orders?.thickness}}</td></tr>
-                  <tr><td>Height</td><td>{{orders?.height}}</td></tr>
-                  <tr><td>Fixing area</td><td>{{orders?.fixing_area}}</td></tr>
-                  <tr><td>Board side</td><td>{{orders?.board_side}}</td></tr>
-                  <tr><td>Chain type</td><td>{{orders?.chain_type}}</td></tr>
-                </table>
-            </div>
-          </div>
-          <!-- Material inpnut -->
-          <div *ngIf="deletee">
-            <p>Are You Sure want to delete</p>
-            <a (click)="deleted()" class="btn btn-danger">Yes</a><a (click)="view()" class="btn btn-danger">No</a>
-          </div>
-      </div>    
+        </table>
+    </div>
+  </div>
+</div>  
+ <!-- Delete Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure want to delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button (click)="deleteorder()" class="btn btn-primary" data-dismiss="modal">Yes</button>
+    </div>
+    </div>
+</div>
+</div>
+<!--print page template--> 
+<div *ngIf="printpage" id="printablediv">
+  <table>
+    <tr>
+      <td>
+        order name:
+      </td>
+      <td>
+       ahsggduhgu
+      </td>
+    </tr>
+  </table>
 </div>

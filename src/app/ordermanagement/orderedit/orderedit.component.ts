@@ -25,10 +25,10 @@ export class OrdereditComponent implements OnInit {
   }
   
   cancel(){
-    this.router.navigate(['/orderview']);
+    this.router.navigate(['/dashboard/orderview']);
   }
   ngOnInit(){
-    let order_code = window.localStorage.getItem("editemp_code");
+    let order_code = window.localStorage.getItem("edit");
     // read one product record
     this.orderservice.orderview(order_code)
         .subscribe(orders => {
@@ -44,10 +44,10 @@ updateProduct(){
         this.orderservice.orderupdate(this.update_product_form.value)
         .subscribe(orders=>{
           if(orders.status){
-          alert("Updated")
-          this.router.navigate(['/orderview'])
+          alert("Updated successfull")
+          this.router.navigate(['/dashboard/orderview'])
         }else{
-          alert('failed')
+          alert('failed to update')
         }
         });
 }

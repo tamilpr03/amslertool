@@ -1,12 +1,12 @@
-<div class=" container bg-white p-3">
-  <a [routerLink]="(['/orderadd'])">New Order</a>
-<table id="dtBasicExample" class="table table-bordered table-sm table-responsive-md" cellspacing="0" width="100%">
+<div class=" container jumbotron p-3">
+  <table id="dtBasicExample" class="table table-responsive-md"  width="100%">
     <thead class="grey lighten-2">
       <tr> 
         <th class="th-sm ">Order code</th>
         <th class="th-sm">Customer code</th>
-        <th class="th-sm">product category</th>
-        <th class="th-sm">product name</th>
+        <th class="th-sm">Product category</th>
+        <th class="th-sm">Product name</th>
+        <th class="th-sm">Order time</th>
         <th class="th-sm">Order status</th>
         <th class="">Action</th>
       </tr>
@@ -17,22 +17,22 @@
         <td>{{order.customer_code}}</td>
         <td>{{order.category_name}}</td>
         <td>{{order.product_name}}</td>
-        <td>{{order.order_status}}</td>
+        <td>{{order.product_name}}</td>
+        <td  id="status" class=""><strong>{{order.order_status}}</strong></td>
         <td class="align-middle pl-4">
-            <a (click)="orderview(order)" class='btn btn-primary '>
-              <span class='glyphicon glyphicon-eye-open'></span> View
-            </a>
+            <a (click)="orderview(order)" class='btn btn-primary btn-sm '>View</a>
         </td>
       </tr>
-     
     </tbody>
     <tfoot>
       <tr>
-          <th class="th-sm">Emp Code</th>
-            <th class="th-sm">Emp name</th>
-            <th class="th-sm">Emp Phone</th>
-              <th class="th-sm">Emp email</th>
-                <th class="th-sm">Actions</th>
+        <th class="th-sm">Order Code</th>
+        <th class="th-sm">Customer code</th>
+        <th class="th-sm">Product category</th>
+        <th class="th-sm">Product name</th>
+        <th class="th-sm">Order time</th>
+        <th class="th-sm">Order status</th>
+        <th class="th-sm">Actions</th>
       </tr>
     </tfoot>
   </table>

@@ -27,7 +27,6 @@ export class SidebarComponent implements OnInit {
     }
   }
   employeelist(){
-    this.router.navigate(["employeelist"]);
-    window.location.reload();
+    this.router.navigate(["dashboard/employeelist"]);
   }
 }

@@ -1,9 +1,13 @@
-<div class="container-flueid">
+<div style="min-height:600px;" class="container-flueid">
     <div class="d-flex">
-        <app-sidebar></app-sidebar>
-        <div class="w-100">
+        <div style="min-height:600px;" class="elegant-color ">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="w-100 h-100 ">
             <app-topbar></app-topbar>
+            <div class="grey lighten-5 p-3" >
             <router-outlet></router-outlet>
+        </div>
         </div>      
     </div>
 </div>

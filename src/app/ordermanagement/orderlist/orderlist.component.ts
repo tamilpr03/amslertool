@@ -11,25 +11,40 @@ declare var $:any;
 })
 export class OrderlistComponent implements OnInit {
   orders: Order;
-  constructor( private orderservice:OrderService, private router:Router) { 
-    //its data table  scrsipts
-    $(document).ready(function () {
-      $('#dtBasicExample').DataTable();
-      $('.dataTables_length').addClass('bs-select');
-      });
+  constructor( public orderservice:OrderService, private router:Router) { 
+   
+  }
+  ngOnInit() {
+        
+    //list all employee
+    this.orderlist();
+    
   }
 
-  ngOnInit() {
-    
-//list all employee
+    //list all data
+  orderlist(){
     this.orderservice.orderlist()
-    .subscribe(orders=>this.orders=orders['records']);
-    
+    .subscribe(orders=>{
+      
+      this.orders=orders['records'];
+      console.log(orders['records'][0].order_status);
+                //its data table  scrsipts
+      $(document).ready(function () {
+        $('#dtBasicExample').DataTable();
+        });
+    }
+      );
   }
+  
+  //click to view data
   orderview(orders:Order): void{
-    window.localStorage.removeItem("editemp_code");
-    window.localStorage.setItem("editemp_code", orders.order_code.toString());
-    this.router.navigate(['/orderview']);
+    window.localStorage.removeItem("view");
+    window.localStorage.removeItem("edit");
+    window.localStorage.removeItem("delete");
+    window.localStorage.setItem("view", orders.order_code.toString());
+    window.localStorage.setItem("edit", orders.order_code.toString());
+    window.localStorage.setItem("delete", orders.order_code.toString());
+    this.router.navigate(['/dashboard/orderview']);
   }
 
 }

@@ -13,20 +13,25 @@ export class EmployeelistComponent implements OnInit {
 
   employees: Employee;
   constructor( private employeeservice:EmployeeService, private router:Router) { 
-    //its data table  scrsipts
-    $(document).ready(function () {
-      $('#dtBasicExample').DataTable();
-      $('.dataTables_length').addClass('bs-select');
-      });
   }
 
   ngOnInit() {
-    
-//list all employee
-    this.employeeservice.employeelist()
-    .subscribe(employees=>this.employees=employees['records']);
-    
+    //list all employee
+    this.employeelist();
   }
+  //list all employee
+  employeelist(){
+    this.employeeservice.employeelist()
+    .subscribe(employees=>{
+      this.employees=employees['records'];
+      
+      //datatable employee
+      $(document).ready(function(){
+        $("#dtBasicExample").DataTable();
+      })
+    });
+  }
+  //view employee details
   employeeview(employee:Employee): void{
     window.localStorage.removeItem("editemp_code");
     window.localStorage.setItem("editemp_code", employee.emp_code.toString());

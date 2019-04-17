@@ -52,9 +52,10 @@ export class AdminLoginComponent implements OnInit {
           .subscribe(
               data => {
                 if(data.status){
-                  window.alert("Login Successfull...")
+                  window.alert(data.message)
                   this.router.navigate(['dashboard']);
-                  localStorage.setItem("user",data.message);
+                  localStorage.setItem("user",data.emp_name);
+                  localStorage.setItem("permission",data.permission);
                   localStorage.setItem('currentUser', JSON.stringify(data));
                 }else{
                   alert("login failed");

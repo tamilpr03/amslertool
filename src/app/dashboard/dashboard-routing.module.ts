@@ -17,9 +17,8 @@ const routes: Routes = [
     path:'', 
     component:DashboardComponent,
       children:[
-       {path:'d',component:SidebarComponent},
-       {path:'b',component:TopbarComponent},
-       {path:'employeelist',component:EmployeelistComponent},
+       {path:'s',component:SidebarComponent},
+       {path:'t',component:TopbarComponent},
        {path:'employeelist',component:EmployeelistComponent},
        {path:'employeeadd',component:EmployeeaddComponent},
        {path:'employeeview',component:EmployeeviewComponent},
@@ -28,7 +27,7 @@ const routes: Routes = [
        {path:'orderlist',component:OrderlistComponent},
        {path:'orderedit',component:OrdereditComponent},
        {path:'orderview',component:OrderviewComponent},
-       {path:'orderadd',component:OrderaddComponent},
+       {path:'orderadd',component:OrderaddComponent}
       ]  
   }
 ];

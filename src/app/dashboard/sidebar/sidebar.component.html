@@ -1,35 +1,33 @@
 
-<div  class="container-flueid">
-      <nav style="width:180px; transition: 0.5s;" id="sidenav" class="">
-          <ul style="min-height:600px;" class="list-group bg-danger">
-              <a style="margin-left: 200px; margin-top: 15px; z-index: 1; position: absolute; " id="togglemenu" href="javascript:void(0)" class="text-right text-white" (click)="toggle()"><i class="fa fa-bars"></i></a>
-            <a class="btn text-white btn-danger text-nowrap m-3 ml-0 p-2" >Amsler India</a>
+<nav class="nav container-flueid m-0" >
+          <ul class="list-group h-100 " id="sidenav">
+              <a style="color:rgb(18, 19, 18); " id="togglemenu" href="javascript:void(0)" class="text-right" (click)="toggle()"><i class="fa fa-bars text-elegant-color"></i></a>
+              <li class="list-group-item p-0 m-0 border-0 elegant-color  pb-0"><a class=" text-center pt-3 pb-3 btn text-white text-nowrap waves-effect text-left m-0 rounded-0 p-0 w-100"> <h5>Amsler India</h5> <small>( V.1.0.0 )</small></a></li>
               <div class="border-bottom "></div>
-            <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a [routerLink]="['/dashboard']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-home mr-1"></i> <small>Dashboard</small></a></li>
-            <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a data-toggle="collapse" data-target="#order" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-cart-plus mr-1"></i> <small>Orders</small></a></li>
+              <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a [routerLink]="['/dashboard/orderlist']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 p-0 pt-3 pb-3 w-100"><i class=" fas fa-home mr-1  ml-3"></i> Dashboard</a></li>
+            <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a data-toggle="collapse" data-target="#order" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-cart-plus mr-1 ml-3"></i> Orders<small><i class=" fas fa-plus ml-5"></i></small></a></li>
               <div class="collapse" id="order">
                   <ul class="list-group pl-4">
-                      <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a [routerLink]="['/orderadd']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-plus mr-1"></i> <small>New Orders</small></a></li>
-                      <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a [routerLink]="['/orderlist']" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-shopping-bag mr-1"></i> <small>All Order</small></a></li>
+                      <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a [routerLink]="['/dashboard/orderadd']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-plus mr-1 ml-3"></i> New Orders</a></li>
+                      <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a [routerLink]="['/dashboard/orderlist']" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-shopping-bag mr-1 ml-3"></i> All Order</a></li>
                   </ul>
                 </div>
-            <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a data-toggle="collapse" data-target="#employee" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-user-circle mr-1"></i> <small>Employee</small></a></li>
+            <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a data-toggle="collapse" data-target="#employee" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-user-circle mr-1 ml-3"></i> Employee<small><i class=" fas fa-plus ml-4"></i></small></a></li>
             <div class="collapse" id="employee">
               <ul class="list-group pl-4">
-                  <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a [routerLink]="['/employeeadd']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-plus mr-1"></i> <small>Add Employee</small></a></li>
-                  <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a (click)="employeelist()" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-server mr-1"></i> <small>Employee List</small></a></li>
-                  <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a [routerLink]="['/']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-server mr-1"></i> <small>Login Employee(OTP)</small></a></li>
+                  <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a [routerLink]="['/dashboard/employeeadd']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-plus mr-1 ml-3"></i> Add Employee</a></li>
+                  <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a (click)="employeelist()" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 p-0 pt-3 pb-3 w-100"><i class=" fas fa-server mr-1 ml-3"></i> Employee List</a></li>
+                  <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a [routerLink]="['/dashboard/employeelist']" class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-server mr-1 ml-3"></i> Login Employee(OTP)</a></li>
                   
               </ul>
             </div>    
-            <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class="fas fa-fw fa-chart-area"></i> <small>Charts</small></a></li>
-            <li class="list-group-item p-0 m-0 border-0 bg-danger pb-0"><a data-toggle="collapse" data-target="#settings" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-cog mr-1"></i> <small>Settings</small></a></li>
+            <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class="fas fa-fw fa-chart-area mr-1 ml-3"></i> Charts</a></li>
+            <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a data-toggle="collapse" data-target="#settings" class="btn  text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-cog mr-1 ml-3"></i> Settings<small><i class=" fas fa-plus ml-4"></i></small></a></li>
             <div class="collapse" id="settings">
               <ul class="list-group pl-4">
-                  <li class="list-group-item p-0 m-0 border-0 bg-dark pb-0"><a class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0 z-depth-0 p-2 pl-3 w-100"><i class=" fas fa-key mr-1"></i> <small>Permissions</small></a></li>
+                  <li class="list-group-item p-0 m-0 border-0 elegant-color pb-0"><a class="btn text-white text-nowrap waves-effect text-left m-0 rounded-0  p-0 pt-3 pb-3 w-100"><i class=" fas fa-key mr-1 ml-3"></i> Permissions</a></li>
                   
               </ul>
             </div>
           </ul>
         </nav>
-</div>

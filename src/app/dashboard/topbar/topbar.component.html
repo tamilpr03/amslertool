@@ -1,28 +1,28 @@
 <div class="container-flueid">
 <!--Navbar -->
-<nav class="mb-1 navbar  navbar-expand-lg bg-danger text-white lighten-1 border-left-1">
+<nav class="mb-1 navbar  navbar-expand-lg  lighten-1 border-left-1">
     <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item mr-2">
-            <a class="nav-link rounded-circle waves-effect waves-light">
-              <i class="fas fa-bell"></i>
+            <a class="nav-link waves-effect waves-light">
+              <i class="fas fa-bell grey-text "></i>
               <span  class="badge badge-danger badge-counter"><small>5</small></span>
             </a>
           </li>  
       <li class="nav-item mr-2">
-          <a class="nav-link rounded-circle waves-effect waves-light">
-            <i class="fas fa-envelope"></i>
+          <a class="nav-link  waves-effect waves-light">
+            <i class="fas fa-envelope grey-text"></i>
             <span class="badge badge-danger badge-counter"><small>3</small></span>
           </a>
         </li>
           <li class="nav-item dropdown">
               <a class="nav-link " id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                <i class="fas fa-user-circle"></i>
+                <i class="fas fa-user-circle grey-text "></i>
               </a>
-              <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                <a class="dropdown-item" href="#">Action</a>
+              <div  class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                <a class=" text-center grey dropdown-item ">{{username}}</a>
                 <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a (click)="logout()" class="dropdown-item" href="#">Logout</a>
               </div>
             </li>
       </ul>

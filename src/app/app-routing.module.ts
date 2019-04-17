@@ -5,8 +5,8 @@ import { EmployeeLoginComponent } from './auth/employee-login/employee-login.com
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 
 const routes: Routes = [
-  {path:'', loadChildren:'./dashboard/dashboard.module#DashboardModule'},
-
+  {path:'dashboard', loadChildren:'./dashboard/dashboard.module#DashboardModule'},
+  {path:'', component:AuthDashboardComponent},
   {path:'authdashboard', component:AuthDashboardComponent},
   {path:'adminlogin', component:AdminLoginComponent},
   {path:'employeelogin', component:EmployeeLoginComponent},
